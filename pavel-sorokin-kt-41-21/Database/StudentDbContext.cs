@@ -9,6 +9,7 @@ namespace pavel_sorokin_kt_41_21.Database
         //Добавляем таблицы
         DbSet<Student> Students { get; set; }
         DbSet<Group> Groups { get; set; }
+        DbSet<Discipline> Disciplines { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
