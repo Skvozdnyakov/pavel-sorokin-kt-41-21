@@ -12,9 +12,8 @@
 
         public int GroupId { get; set; }
 
-        public int DisciplineId { get; set; }
+        public bool IsDeleted { get; set; }
 
         public Group Group { get; set; }
-        public Discipline Discipline { get; set; }
     }
 }

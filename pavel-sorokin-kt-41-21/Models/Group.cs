@@ -6,5 +6,7 @@
 
         public string GroupName { get; set; }
 
+        public int DisciplineId { get; set; }
+        public Discipline Discipline { get; set; }
     }
 }

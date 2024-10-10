@@ -28,7 +28,21 @@ namespace pavel_sorokin_kt_41_21.Database.Configurations
                 .HasColumnType(ColumnType.String).HasMaxLength(100)
                 .HasComment("Название группы");
 
+            builder.ToTable(TableName)
+                .HasOne(p => p.Discipline)
+                .WithMany()
+                .HasForeignKey(p => p.DisciplineId)
+                .HasConstraintName("fk_f_discipline_id")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.ToTable(TableName)
+                .HasIndex(p => p.DisciplineId, $"idx_{TableName}_fk_f_discipline_id");
+
             builder.ToTable(TableName);
+
+            //Добавим явную автоподгрузку связанной сущности
+            builder.Navigation(p => p.Discipline)
+                .AutoInclude();
         }
     }
 }

@@ -48,6 +48,9 @@ namespace pavel_sorokin_kt_41_21.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GroupId"));
 
+                    b.Property<int>("DisciplineId")
+                        .HasColumnType("int");
+
                     b.Property<string>("GroupName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -57,6 +60,8 @@ namespace pavel_sorokin_kt_41_21.Migrations
 
                     b.HasKey("GroupId")
                         .HasName("pk_cd_group_group_id");
+
+                    b.HasIndex(new[] { "DisciplineId" }, "idx_cd_group_fk_f_discipline_id");
 
                     b.ToTable("cd_group", (string)null);
                 });
@@ -71,9 +76,6 @@ namespace pavel_sorokin_kt_41_21.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"));
 
-                    b.Property<int>("DisciplineId")
-                        .HasColumnType("int");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -85,6 +87,11 @@ namespace pavel_sorokin_kt_41_21.Migrations
                         .HasColumnType("int")
                         .HasColumnName("f_group_id")
                         .HasComment("Идентификатор группы");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("b_deleted")
+                        .HasComment("Статус удаления");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -103,29 +110,31 @@ namespace pavel_sorokin_kt_41_21.Migrations
                     b.HasKey("StudentId")
                         .HasName("pk_cd_student_student_id");
 
-                    b.HasIndex("DisciplineId");
-
                     b.HasIndex(new[] { "GroupId" }, "idx_cd_student_fk_f_group_id");
 
                     b.ToTable("cd_student", (string)null);
                 });
 
-            modelBuilder.Entity("pavel_sorokin_kt_41_21.Models.Student", b =>
+            modelBuilder.Entity("pavel_sorokin_kt_41_21.Models.Group", b =>
                 {
                     b.HasOne("pavel_sorokin_kt_41_21.Models.Discipline", "Discipline")
                         .WithMany()
                         .HasForeignKey("DisciplineId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_f_discipline_id");
 
+                    b.Navigation("Discipline");
+                });
+
+            modelBuilder.Entity("pavel_sorokin_kt_41_21.Models.Student", b =>
+                {
                     b.HasOne("pavel_sorokin_kt_41_21.Models.Group", "Group")
                         .WithMany()
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("fk_f_group_id");
-
-                    b.Navigation("Discipline");
 
                     b.Navigation("Group");
                 });
