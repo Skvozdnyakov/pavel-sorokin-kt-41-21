@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\WeatherForecastController.cs" />
     <Compile Remove="Database\ColumnType.cs" />
     <Compile Remove="Database\DisciplineDbContext.cs" />
     <Compile Remove="Migrations\20241010164656_createDB.cs" />
@@ -15,6 +16,7 @@
     <Compile Remove="Migrations\20241024123353_UpDiscipine.cs" />
     <Compile Remove="Migrations\20241024123353_UpDiscipine.Designer.cs" />
     <Compile Remove="Migrations\StudentDbContextModelSnapshot.cs" />
+    <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pavel-sorokin-kt-41-21", "pavel-sorokin-kt-41-21\pavel-sorokin-kt-41-21.csproj", "{CA958643-6BF7-400D-9967-E350F6303853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pavel-sorokin-kt-41-21", "pavel-sorokin-kt-41-21\pavel-sorokin-kt-41-21.csproj", "{CA958643-6BF7-400D-9967-E350F6303853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pavel-sorokin-kt-41-21.Tests", "pavel-sorokin-kt-41-21.Tests\pavel-sorokin-kt-41-21.Tests.csproj", "{B712DE04-D0BA-4BA0-A83E-8B03C697BB95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CA958643-6BF7-400D-9967-E350F6303853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA958643-6BF7-400D-9967-E350F6303853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA958643-6BF7-400D-9967-E350F6303853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B712DE04-D0BA-4BA0-A83E-8B03C697BB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B712DE04-D0BA-4BA0-A83E-8B03C697BB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B712DE04-D0BA-4BA0-A83E-8B03C697BB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B712DE04-D0BA-4BA0-A83E-8B03C697BB95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
