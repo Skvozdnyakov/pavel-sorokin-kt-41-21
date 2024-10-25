@@ -4,7 +4,7 @@ using pavel_sorokin_kt_41_21.Models;
 
 namespace pavel_sorokin_kt_41_21.Database
 {
-    public class StudentDbContext : DbContext
+    public class DisciplineDbContext : DbContext
     {
         //Добавляем таблицы
         DbSet<Student> Students { get; set; }
@@ -14,16 +14,14 @@ namespace pavel_sorokin_kt_41_21.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Добавляем конфигурации к таблицам
-            modelBuilder.ApplyConfiguration(new StudentConfiguration());
-            modelBuilder.ApplyConfiguration(new GroupConfiguration());
             modelBuilder.ApplyConfiguration(new DisciplineConfiguration());
+            modelBuilder.ApplyConfiguration(new GroupConfiguration());
         }
 
-        public StudentDbContext(DbContextOptions<StudentDbContext> options) : base(options)
+        public DisciplineDbContext(DbContextOptions<StudentDbContext> options) : base(options)
         {
 
         }
 
     }
-
 }

@@ -9,6 +9,12 @@
 
   <ItemGroup>
     <Compile Remove="Database\ColumnType.cs" />
+    <Compile Remove="Database\DisciplineDbContext.cs" />
+    <Compile Remove="Migrations\20241010164656_createDB.cs" />
+    <Compile Remove="Migrations\20241010164656_createDB.Designer.cs" />
+    <Compile Remove="Migrations\20241024123353_UpDiscipine.cs" />
+    <Compile Remove="Migrations\20241024123353_UpDiscipine.Designer.cs" />
+    <Compile Remove="Migrations\StudentDbContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +26,10 @@
     </PackageReference>
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.13" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

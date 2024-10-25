@@ -6,7 +6,7 @@ using pavel_sorokin_kt_41_21.Models;
 
 namespace pavel_sorokin_kt_41_21.Database.Configurations
 {
-    public class DisciplineConfiguration
+    public class DisciplineConfiguration : IEntityTypeConfiguration<Discipline>
     {
         private const string TableName = "cd_discipline";
 
@@ -29,21 +29,18 @@ namespace pavel_sorokin_kt_41_21.Database.Configurations
                 .HasColumnType(ColumnType.String).HasMaxLength(100)
                 .HasComment("Название дисциплины");
 
-            /*builder.Property(p => p.GroupId)
+            builder.Property(p => p.Direction)
                 .IsRequired()
-                .HasColumnName("f_group_id")
-                .HasColumnType(ColumnType.Int)
-                .HasComment("Идентификатор группы");
+                .HasColumnName("c_direction")
+                .HasColumnType(ColumnType.String).HasMaxLength(100)
+                .HasComment("Направление");
 
-            builder.ToTable(TableName)
-                .HasOne(p => p.Group)
-                .WithMany()
-                .HasForeignKey(p => p.GroupId)
-                .HasConstraintName("fk_f_group_id")
-                .OnDelete(DeleteBehavior.Cascade);
+            builder.Property(p => p.IsDeleted)
+                .IsRequired()
+                .HasColumnName("b_deleted")
+                .HasColumnType(ColumnType.Bool)
+                .HasComment("Статус удаления");
 
-            builder.ToTable(TableName)
-                .HasIndex(p => p.GroupId, $"idx_{TableName}_fk_f_group_id");*/
 
             builder.ToTable(TableName);
 
